@@ -1,0 +1,23 @@
+{
+  "name": "code-pv",
+  "version": "0.1.0",
+  "private": true,
+  "description": "代码渲染音乐 PV —— 每一帧都是歌曲时间 t 的函数",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render",
+    "beattest": "remotion render BeatTest out/beat-test.mp4",
+    "still": "remotion still"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.532",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.532"
+  }
+}

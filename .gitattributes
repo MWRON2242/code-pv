@@ -1,0 +1,9 @@
+# 统一换行符，避免 Windows 检出时出现满屏 "LF will be replaced by CRLF" 警告
+* text=auto eol=lf
+
+# 二进制文件不做行尾转换
+*.png binary
+*.jpg binary
+*.flac binary
+*.mp4 binary
+*.mov binary

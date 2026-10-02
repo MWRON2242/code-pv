@@ -1,0 +1,8 @@
+# 歌词表 —— 本片不使用歌词
+#
+# 用户决定：player 镜头做纯标题卡，不显示歌词。
+# 所以这个文件保持为空，input/lyrics.json 里会是空的 lines 数组。
+#
+# 如果以后想在 player 段落显示歌词，把歌词按一行一句填在下面，
+# 再跑 node tools/fit-script.mjs lyrics --every 2 即可
+# （排布会自动只取 player 镜头可见的时间窗口）。

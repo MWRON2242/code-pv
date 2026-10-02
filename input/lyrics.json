@@ -1,0 +1,5 @@
+{
+  "_说明": "由 tools/fit-script.mjs 从 lyrics.txt 生成；当前为空 = 不显示歌词",
+  "_时序": "锚点=downbeat，每 2 个锚点一行",
+  "lines": []
+}

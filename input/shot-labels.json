@@ -1,0 +1,37 @@
+{
+  "_说明": "段落 → 镜头标签。标签是**权重与语气**，不是显隐开关。",
+  "_铁律": "S21（窗口关闭）之前，任何一侧 opacity 都不得为 0。低权重侧最低 0.35。",
+  "_来源": "规格 input/总线.txt §2.3 + 用户对「冲突一」的修正说明",
+  "_落地方式": "透明度、饱和度、动画频率、消息密度四项一起变，不是简单的淡出。",
+
+  "labels": {
+    "player": { "left": 0.35, "right": 1.00, "sat": 0.35, "speed": 0.35, "note": "间离：左窗变暗只留光标，右窗主导" },
+    "chat":   { "left": 1.00, "right": 0.62, "sat": 1.00, "speed": 1.00, "note": "对话：左窗主导，右窗作背景" },
+    "dash":   { "left": 1.00, "right": 1.00, "sat": 1.00, "speed": 1.35, "note": "爆发：两侧都拉满，动态加速" },
+    "term":   { "left": 0.42, "right": 1.00, "sat": 0.60, "speed": 0.65, "note": "独白：左窗安静，右窗主导" }
+  },
+
+  "bySection": {
+    "intro": "player",
+    "verse1": "chat",
+    "verse1b": "chat",
+    "chorus1": "dash",
+    "verse2": "term",
+    "bridge": "term",
+    "verse2b": "term",
+    "chorus2": "dash",
+    "verse3": "term",
+    "interlude": "term",
+    "breakdown": "player",
+    "chorus3": "dash",
+    "finale": "dash",
+    "outro": "player"
+  },
+
+  "default": "chat",
+
+  "_备注": {
+    "finale": "规格写「13 finale：term → dash（从信念的回顾到决绝宣言）」。取 dash 作终段主导；若需要段落内部再切一次，后续在 finale 内按时间细分。",
+    "段落名与真实人声结构不符": "本项目 14 段是按能量切的，与真实人声结构不一致（详见 HANDOFF.md 第三节）。权重落点会偏，但不影响状态机触发（触发按歌词时间走）。"
+  }
+}

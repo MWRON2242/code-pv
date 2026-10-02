@@ -1,0 +1,21 @@
+# 段落名称（按顺序，一行一个）
+# analyze.mjs 会自动分段，但「名字」是猜的 —— 这个文件用来覆盖它。
+# 名字对不上的时候（数量不一致）会告警并退回自动命名。
+#
+# 起止时间与能量见 out/analysis.html
+#
+#   #   时间            能量   重复组
+intro
+verse1
+verse1b
+chorus1
+verse2
+bridge
+verse2b
+chorus2
+verse3
+interlude
+breakdown
+chorus3
+finale
+outro

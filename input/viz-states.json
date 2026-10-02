@@ -1,0 +1,133 @@
+{
+  "_说明": "崩坏状态机 S0–S21 的定义。参数全部来自规格 input/总线.txt §3。",
+  "_为什么是数据": "22 个状态的参数写在这里，调参不用碰代码；状态内部只管「我这个状态长什么样」。",
+  "_字段": {
+    "at": "触发时间（秒）。来自 input/lyric-timing.json 的触发点",
+    "delay": "触发后延迟多少秒才真正开始（规格 §3 的「延迟」）",
+    "transition": "过渡时长（秒）。0 表示瞬切",
+    "easing": "linear | easeIn | easeOut | easeInOut | fastSlow（先快后慢）",
+    "mode": "right = 只作用于右窗；full = 接管全屏",
+    "params": "该状态自己的视觉参数"
+  },
+  "_起始时间": "真实开始时间 = at + delay。解析器用的是这个值。",
+
+  "states": [
+    {
+      "id": "S0", "name": "整齐向量方格", "at": 0.0, "delay": 0, "transition": 0, "easing": "linear",
+      "mode": "right",
+      "params": { "grid": 16, "hueMin": 180, "hueMax": 220, "noise": 0.02 }
+    },
+    {
+      "id": "S1", "name": "错误日志", "at": 46.620, "delay": 0.5, "transition": 1.2, "easing": "easeInOut",
+      "mode": "right",
+      "params": { "jitterPx": 3, "warnPerSec": 5, "hueShift": 20 }
+    },
+    {
+      "id": "S2", "name": "红色归因", "at": 61.810, "delay": 0, "transition": 0.8, "easing": "easeOut",
+      "mode": "right",
+      "params": { "chunks": 10, "red": "#FF3B30", "arrowHz": 4 }
+    },
+    {
+      "id": "S3", "name": "全屏责任归属", "at": 74.780, "delay": 0.3, "transition": 1.5, "easing": "fastSlow",
+      "mode": "full",
+      "params": { "bg": "#1A0000", "fg": "#FF3B30", "textHeightRatio": 0.25, "blinkHz": 2 }
+    },
+    {
+      "id": "S4", "name": "空荡", "at": 91.349, "delay": 0, "transition": 2.0, "easing": "easeOut",
+      "mode": "right",
+      "params": { "fromRedRatio": 0.9, "toRedRatio": 0.05, "noiseFrom": 0.1, "noiseTo": 0.4, "cavityHz": 0.5 }
+    },
+    {
+      "id": "S5", "name": "怪物劣等感", "at": 116.370, "delay": 0, "transition": 2.0, "easing": "easeInOut",
+      "mode": "right",
+      "params": { "verticesMin": 12, "verticesMax": 20, "crawlHz": 2, "eyeHz": 4, "fullAt": 120.359 }
+    },
+    {
+      "id": "S6", "name": "防卫本能", "at": 131.250, "delay": 0, "transition": 1.5, "easing": "easeInOut",
+      "mode": "right",
+      "params": { "shellRadius": 200, "textLines": 20, "keyword": "防卫" }
+    },
+    {
+      "id": "S7", "name": "二次归因", "at": 136.310, "delay": 0.5, "transition": 1.0, "easing": "easeOut",
+      "mode": "right",
+      "params": { "cracks": 7, "red": "#FF3B30", "arrowHz": 4 }
+    },
+    {
+      "id": "S8", "name": "去饱和", "at": 154.759, "delay": 0, "transition": 6.0, "easing": "easeInOut",
+      "mode": "right",
+      "params": {
+        "crawlFrom": 2.0, "crawlTo": 0.2, "redFrom": "#FF3B30", "redTo": "#8B6B6B", "coolSec": 4.0,
+        "satFrom": 1.0, "satTo": 0.1, "noiseFrom": 0.4, "noiseTo": 0.05
+      }
+    },
+    {
+      "id": "S9", "name": "全白", "at": 175.819, "delay": 0, "transition": 6.0, "easing": "easeInOut",
+      "mode": "full",
+      "params": { "brightness": 0.9, "contrast": 0.05, "cursorHz": 1 }
+    },
+    {
+      "id": "S10", "name": "回光返照", "at": 188.919, "delay": 0, "transition": 0.1, "easing": "linear",
+      "mode": "full",
+      "params": { "flashSec": 0.1, "reuse": "S5" }
+    },
+    {
+      "id": "S11", "name": "删除", "at": 192.610, "delay": 0, "transition": 1.0, "easing": "easeOut",
+      "mode": "right",
+      "params": { "charsPerSec": 0.3 }
+    },
+    {
+      "id": "S12", "name": "空壳", "at": 196.400, "delay": 0, "transition": 1.5, "easing": "easeInOut",
+      "mode": "right",
+      "params": { "shellAlpha": 0.2 }
+    },
+    {
+      "id": "S13", "name": "灰烬", "at": 201.550, "delay": 0, "transition": 2.0, "easing": "easeOut",
+      "mode": "full",
+      "params": { "particlesMin": 200, "particlesMax": 300, "fallPxPerSec": 10 }
+    },
+    {
+      "id": "S14", "name": "两点", "at": 207.000, "delay": 0, "transition": 2.0, "easing": "easeInOut",
+      "mode": "full",
+      "params": { "dotRadius": 4, "distance": 200, "color": "#666666" }
+    },
+    {
+      "id": "S15", "name": "垃圾念想", "at": 222.020, "delay": 0, "transition": 1.5, "easing": "easeInOut",
+      "mode": "right",
+      "params": { "blocksMin": 20, "blocksMax": 30, "color": "#666666", "warmUpSec": 2.0 }
+    },
+    {
+      "id": "S16", "name": "写下你", "at": 223.660, "delay": 0, "transition": 1.0, "easing": "easeOut",
+      "mode": "right",
+      "params": { "writeSec": 0.5, "eraseSec": 0.3, "gapSec": 0.8, "loops": 3 }
+    },
+    {
+      "id": "S17", "name": "归零", "at": 225.550, "delay": 0, "transition": 1.5, "easing": "easeInOut",
+      "mode": "right",
+      "params": { "curveFromPx": 200, "curveToPx": 0, "archiveSec": 1.5 }
+    },
+    {
+      "id": "S18", "name": "确认", "at": 229.199, "delay": 0, "transition": 0.6, "easing": "easeOut",
+      "mode": "right",
+      "params": { "lines": ["TRUE", "TRUE", "WAS TRUE"], "colors": ["#FFFFFF", "#FFFFFF", "#888888"] }
+    },
+    {
+      "id": "S19", "name": "收拢", "at": 235.030, "delay": 0, "transition": 3.0, "easing": "easeIn",
+      "mode": "full",
+      "params": { "convergeSec": 3.0 }
+    },
+    {
+      "id": "S20", "name": "标题", "at": 239.020, "delay": 0, "transition": 1.0, "easing": "easeOut",
+      "mode": "full",
+      "params": { "textHeightRatio": 0.125, "color": "#FFFFFF", "holdSec": 3.0 }
+    },
+    {
+      "id": "S21", "name": "关闭", "at": 242.273, "delay": 0, "transition": 0.3, "easing": "easeIn",
+      "mode": "full",
+      "params": { "closeSec": 0.3, "holdBlackSec": 2.0, "credits": true }
+    }
+  ],
+
+  "_右侧常驻层": {
+    "说明": "S4 之后，右窗底层始终保留一层「网格＋噪点」，颜色与饱和度由状态参数控制。"
+  }
+}

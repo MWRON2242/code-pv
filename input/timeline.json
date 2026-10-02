@@ -1,0 +1,105 @@
+{
+  "_说明": "由 tools/fit-script.mjs 从 timeline.txt 生成；改分镜请改 timeline.txt 再重跑",
+  "_镜头可选值": "player = 播放器歌词页（方向 D）；chat = 聊天窗口（方向 A）",
+  "song": "song.flac",
+  "audio": "audio/song.flac",
+  "fps": 24,
+  "scenes": [
+    {
+      "id": "player1",
+      "scene": "player",
+      "from": 0,
+      "to": 16.562,
+      "fadeIn": 1.2,
+      "fadeOut": 0.5
+    },
+    {
+      "id": "chat2",
+      "scene": "chat",
+      "from": 16.562,
+      "to": 56.881,
+      "fadeIn": 0.5,
+      "fadeOut": 0
+    },
+    {
+      "id": "dash3",
+      "scene": "dash",
+      "from": 56.881,
+      "to": 76.081,
+      "fadeIn": 0,
+      "fadeOut": 0
+    },
+    {
+      "id": "chat4",
+      "scene": "chat",
+      "from": 76.081,
+      "to": 91.441,
+      "fadeIn": 0,
+      "fadeOut": 0.4
+    },
+    {
+      "id": "term5",
+      "scene": "term",
+      "from": 91.441,
+      "to": 104.881,
+      "fadeIn": 0.4,
+      "fadeOut": 0
+    },
+    {
+      "id": "chat6",
+      "scene": "chat",
+      "from": 104.881,
+      "to": 122.161,
+      "fadeIn": 0,
+      "fadeOut": 0
+    },
+    {
+      "id": "dash7",
+      "scene": "dash",
+      "from": 122.161,
+      "to": 135.601,
+      "fadeIn": 0,
+      "fadeOut": 0
+    },
+    {
+      "id": "chat8",
+      "scene": "chat",
+      "from": 135.601,
+      "to": 152.881,
+      "fadeIn": 0,
+      "fadeOut": 0.4
+    },
+    {
+      "id": "term9",
+      "scene": "term",
+      "from": 152.881,
+      "to": 168.241,
+      "fadeIn": 0.4,
+      "fadeOut": 0.6
+    },
+    {
+      "id": "player10",
+      "scene": "player",
+      "from": 168.241,
+      "to": 183.601,
+      "fadeIn": 0.6,
+      "fadeOut": 0
+    },
+    {
+      "id": "dash11",
+      "scene": "dash",
+      "from": 183.601,
+      "to": 222.001,
+      "fadeIn": 0,
+      "fadeOut": 1
+    },
+    {
+      "id": "chat12",
+      "scene": "chat",
+      "from": 222.001,
+      "to": 242.974,
+      "fadeIn": 1,
+      "fadeOut": 2
+    }
+  ]
+}

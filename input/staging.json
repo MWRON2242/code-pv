@@ -1,0 +1,202 @@
+﻿{
+    "_说明":  "段落编排。段落名来自打点表 sections；找不到的段落用 default。每个镜头有固定基色，段落控制强度与构图。",
+    "_字段":  {
+                "accent":  "段落主色。只有 chat 会用它（所以 chat 的颜色随音乐走）；其余镜头用 shots 里的基色",
+                "intensity":  "段落强度 0~1，驱动各镜头的密度 / 速度 / 亮度",
+                "worldScale":  "chat 右侧世界面板的缩放，1 = 原始，\u003e1 推近",
+                "gridDensity":  "chat 右侧格子的疏密 0~1",
+                "mandalaSpeed":  "chat 中央字符云的演化速度倍率",
+                "camera":  "[段落开始, 段落结束] 的全画面缩放；必须 \u003e= 1，否则露黑边。上限建议不超过 1.02（缩放会按比例裁切四周）",
+                "shake":  "随拍抖动的最大像素数"
+            },
+    "_平滑":  "stageAt() 会在段落边界前后 1.2 秒内把上下两段的所有数值插值过渡，颜色也一样。所以边界不会有硬闪。",
+    "shots":  {
+                  "_说明":  "每个镜头的基色 —— 镜头的身份，不随段落变。避免四个镜头越长越像。",
+                  "chat":  "#1f6feb",
+                  "player":  "#ff5f9e",
+                  "term":  "#3fb950",
+                  "dash":  "#58a6ff"
+              },
+    "default":  {
+                    "accent":  "#1f6feb",
+                    "intensity":  0.6,
+                    "worldScale":  1.0,
+                    "gridDensity":  0.65,
+                    "mandalaSpeed":  1.2,
+                    "camera":  [
+                                   1.0,
+                                   1.0
+                               ],
+                    "shake":  1
+                },
+    "bySection":  {
+                      "intro":  {
+                                    "accent":  "#1f6feb",
+                                    "intensity":  0.35,
+                                    "worldScale":  0.94,
+                                    "gridDensity":  0.3,
+                                    "mandalaSpeed":  0.6,
+                                    "camera":  [
+                                                   1.0,
+                                                   1.003
+                                               ],
+                                    "shake":  0
+                                },
+                      "verse1":  {
+                                     "accent":  "#2f81f7",
+                                     "intensity":  0.55,
+                                     "worldScale":  1.02,
+                                     "gridDensity":  0.6,
+                                     "mandalaSpeed":  1.0,
+                                     "camera":  [
+                                                    1.003,
+                                                    1.006
+                                                ],
+                                     "shake":  1
+                                 },
+                      "verse1b":  {
+                                      "accent":  "#388bfd",
+                                      "intensity":  0.55,
+                                      "worldScale":  1.04,
+                                      "gridDensity":  0.62,
+                                      "mandalaSpeed":  1.05,
+                                      "camera":  [
+                                                     1.006,
+                                                     1.008
+                                                 ],
+                                      "shake":  1
+                                  },
+                      "chorus1":  {
+                                      "accent":  "#a371f7",
+                                      "intensity":  0.85,
+                                      "worldScale":  1.14,
+                                      "gridDensity":  0.95,
+                                      "mandalaSpeed":  2.0,
+                                      "camera":  [
+                                                     1.008,
+                                                     1.012
+                                                 ],
+                                      "shake":  2.5
+                                  },
+                      "verse2":  {
+                                     "accent":  "#58a6ff",
+                                     "intensity":  0.7,
+                                     "worldScale":  1.06,
+                                     "gridDensity":  0.72,
+                                     "mandalaSpeed":  1.3,
+                                     "camera":  [
+                                                    1.012,
+                                                    1.009
+                                                ],
+                                     "shake":  1.5
+                                 },
+                      "bridge":  {
+                                     "accent":  "#3fb950",
+                                     "intensity":  0.45,
+                                     "worldScale":  0.98,
+                                     "gridDensity":  0.4,
+                                     "mandalaSpeed":  0.8,
+                                     "camera":  [
+                                                    1.009,
+                                                    1.006
+                                                ],
+                                     "shake":  0.5
+                                 },
+                      "verse2b":  {
+                                      "accent":  "#58a6ff",
+                                      "intensity":  0.65,
+                                      "worldScale":  1.05,
+                                      "gridDensity":  0.68,
+                                      "mandalaSpeed":  1.2,
+                                      "camera":  [
+                                                     1.006,
+                                                     1.010
+                                                 ],
+                                      "shake":  1.5
+                                  },
+                      "chorus2":  {
+                                      "accent":  "#a371f7",
+                                      "intensity":  1.0,
+                                      "worldScale":  1.24,
+                                      "gridDensity":  1.0,
+                                      "mandalaSpeed":  2.8,
+                                      "camera":  [
+                                                     1.010,
+                                                     1.016
+                                                 ],
+                                      "shake":  3
+                                  },
+                      "verse3":  {
+                                     "accent":  "#58a6ff",
+                                     "intensity":  0.68,
+                                     "worldScale":  1.05,
+                                     "gridDensity":  0.7,
+                                     "mandalaSpeed":  1.25,
+                                     "camera":  [
+                                                    1.016,
+                                                    1.010
+                                                ],
+                                     "shake":  1.5
+                                 },
+                      "interlude":  {
+                                        "accent":  "#3fb950",
+                                        "intensity":  0.5,
+                                        "worldScale":  1.0,
+                                        "gridDensity":  0.45,
+                                        "mandalaSpeed":  0.9,
+                                        "camera":  [
+                                                       1.010,
+                                                       1.006
+                                                   ],
+                                        "shake":  0.5
+                                    },
+                      "breakdown":  {
+                                        "accent":  "#1f6feb",
+                                        "intensity":  0.2,
+                                        "worldScale":  0.9,
+                                        "gridDensity":  0.22,
+                                        "mandalaSpeed":  0.4,
+                                        "camera":  [
+                                                       1.006,
+                                                       1.002
+                                                   ],
+                                        "shake":  0
+                                    },
+                      "chorus3":  {
+                                      "accent":  "#8b949e",
+                                      "intensity":  0.85,
+                                      "worldScale":  1.16,
+                                      "gridDensity":  0.92,
+                                      "mandalaSpeed":  2.1,
+                                      "camera":  [
+                                                     1.002,
+                                                     1.012
+                                                 ],
+                                      "shake":  2.5
+                                  },
+                      "finale":  {
+                                     "accent":  "#7d8590",
+                                     "intensity":  0.9,
+                                     "worldScale":  1.2,
+                                     "gridDensity":  1.0,
+                                     "mandalaSpeed":  2.5,
+                                     "camera":  [
+                                                    1.012,
+                                                    1.018
+                                                ],
+                                     "shake":  3
+                                 },
+                      "outro":  {
+                                    "accent":  "#1f6feb",
+                                    "intensity":  0.75,
+                                    "worldScale":  1.0,
+                                    "gridDensity":  0.55,
+                                    "mandalaSpeed":  1.0,
+                                    "camera":  [
+                                                   1.018,
+                                                   1.004
+                                               ],
+                                    "shake":  1
+                                }
+                  }
+}
