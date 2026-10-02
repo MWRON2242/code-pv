@@ -5,6 +5,35 @@
 > 完整的思路、路线图和决策记录见 [PLAN.md](PLAN.md)。
 > 知识点笔记在 `knowledge/代码渲染PV/`（也同步进了 Obsidian）。
 
+## ⚠️ 本仓库不包含什么（重要）
+
+这是一支**非商业同人作品**，仓库里只有**代码、文档、以及由代码生成的画面**。
+
+| 不包含 | 原因 |
+|---|---|
+| 歌曲音频（`*.flac` / `*.wav`） | 版权归 Yorushika / n-buna / Universal Music Japan |
+| 歌词原文与中文翻译 | 翻译本身也是演绎作品，公开使用需原歌词授权 |
+| 渲染成片（`out/`） | 构建产物，且含上述音频 |
+
+**想跑通全片**，你需要自备音源，然后：
+
+```bash
+# 1. 把音源放到两处（input/ 是源数据，public/audio/ 是渲染时读得到的位置）
+#    input/song.flac  →  public/audio/song.flac
+
+# 2. 重新打点（打点器可人工微调：tools/tapper/index.html）
+node tools/build.mjs beats input/song.flac
+
+# 3. 重新对齐歌词时间轴（input/lyric-timing.json 里的时间会变）
+#    聊天剧本与状态机触发点都只引用「第几句」，所以剧本一行都不用改
+
+# 4. 出片
+node tools/build.mjs all
+```
+
+> 画面本身不依赖任何外部素材：22 个状态全部由代码绘制，
+> 没有图片、没有位图、没有第三方美术资源。
+
 ## 快速开始
 
 ```bash
