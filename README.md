@@ -5,6 +5,30 @@
 > 完整的思路、路线图和决策记录见 [PLAN.md](PLAN.md)。
 > 知识点笔记在 `knowledge/代码渲染PV/`（也同步进了 Obsidian）。
 
+## 🎬 成片
+
+<a href="https://www.bilibili.com/video/BV1QRaU6rEUP/">
+  <img src="docs/preview-title.png" alt="点击在 B 站观看完整成片" width="640">
+</a>
+
+### ▶ [【DSH做《所以我放弃了音乐》PV】](https://www.bilibili.com/video/BV1QRaU6rEUP/) —— 完整成片 4:09（含音乐）
+
+### 画面预览（静音 · 页面内自动播放）
+
+![怪物化段落：由向量构成的怪物，残差骨骼，红色×眼睛](docs/preview-monster.gif)
+
+> **关于在仓库页内播放视频**
+>
+> GitHub 的 Markdown 会过滤 `<iframe>` / `<script>`，所以 **B站播放器无法内嵌** ——
+> 这是 GitHub 的安全策略，任何仓库都做不到。
+>
+> 想在仓库页内直接播放，只有一条路：把视频文件上传到 **GitHub 自己的附件托管**
+> （在任意 issue 或评论里拖拽上传，会得到 `https://github.com/user-attachments/assets/…`
+> 链接，该链接在 README 里能渲染出真正的播放器）。
+>
+> 本仓库没有这样做 —— 完整成片使用了官方音源，不适合托管在 GitHub 上（见下一节）。
+> 上面的 GIF 是**无声**的，因此没有任何版权问题，可以放心内联。
+
 ## ⚠️ 本仓库不包含什么（重要）
 
 这是一支**非商业同人作品**，仓库里只有**代码、文档、以及由代码生成的画面**。
